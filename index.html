@@ -21,7 +21,6 @@
             color: #333;
         }
 
-        /* HEADER & FLAG */
         header {
             background-color: var(--deep-blue);
             color: white;
@@ -39,20 +38,14 @@
             margin: 0 auto;
         }
 
-        .flag-img { 
-            width: 120px; /* Smaller Flag */
-            height: auto;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
-        }
+        .flag-img { width: 120px; height: auto; }
 
         .short-question {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            line-height: 1.2;
             font-weight: 700;
         }
 
-        /* NAVIGATION */
         .banner {
             background-color: #162a44;
             position: sticky; top: 0; z-index: 1000;
@@ -63,13 +56,12 @@
         .banner button {
             background: none; border: none; color: white;
             padding: 15px 20px; font-weight: 700; font-size: 0.85rem;
-            text-transform: uppercase; cursor: pointer; transition: 0.3s;
+            text-transform: uppercase; cursor: pointer;
         }
 
         .banner button.active { color: var(--eth-yellow); border-bottom: 3px solid var(--eth-yellow); }
 
-        /* CONTENT CONTAINERS */
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
         .tab-content {
             display: none; background: white; padding: 40px; 
@@ -77,34 +69,36 @@
         }
         .tab-content.active { display: block; }
 
-        h2 { color: var(--deep-blue); border-left: 6px solid var(--eth-red); padding-left: 15px; }
+        /* THE FIX: Side-by-Side Layout */
+        .flex-row {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
 
-        /* IMAGE SIZING RULES */
-        .img-small { 
-            display: block; 
-            max-width: 300px; /* Smaller Map and Picture */
-            margin: 20px auto; 
+        .flex-text { flex: 1; min-width: 300px; }
+
+        .side-img { 
+            width: 280px; /* Small and neat */
             border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .summary-img {
             display: block;
-            max-width: 500px; /* Smaller Summary Graph */
+            max-width: 600px;
             width: 100%;
             margin: 30px auto;
-            border: 1px solid #ddd;
             border-radius: 10px;
         }
 
-        /* HEADSHOT */
         .headshot-frame {
-            width: 120px; /* Smaller Portrait */
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 10px;
+            width: 120px; height: 120px;
+            border-radius: 50%; overflow: hidden;
+            border: 4px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0 auto 10px;
         }
         .headshot-frame img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -120,7 +114,7 @@
             text-decoration: none; display: block; margin-top: 40px;
         }
 
-        footer { text-align: center; padding: 40px; color: #64748b; font-size: 0.9rem; }
+        footer { text-align: center; padding: 40px; color: #64748b; }
     </style>
 </head>
 <body>
@@ -128,15 +122,13 @@
 <header>
     <div class="header-top">
         <img src="flag.png" alt="Ethiopia Flag" class="flag-img">
-        <div class="short-question">
-            Climate Variability: The Impact on Ethiopia’s Economy & Persistent Poverty
-        </div>
+        <div class="short-question">Ethiopia Research Project</div>
     </div>
 </header>
 
 <nav class="banner">
     <button class="tab-link active" onclick="openTab(event, 'ov')">Overview</button>
-    <button class="tab-link" onclick="openTab(event, 'ca')">Climate & Agriculture</button>
+    <button class="tab-link" onclick="openTab(event, 'ca')">Climate</button>
     <button class="tab-link" onclick="openTab(event, 'ed')">Education</button>
     <button class="tab-link" onclick="openTab(event, 'ec')">Economy</button>
     <button class="tab-link" onclick="openTab(event, 'ef')">Effect</button>
@@ -149,8 +141,12 @@
 
     <div id="ov" class="tab-content active">
         <h2>Overview</h2>
-        <p>As of 2025, Ethiopia has a population of 135 million. It is the 10th-most populous country in the world but faces significant economic challenges.</p>
-        <img src="map.png" alt="Map" class="img-small">
+        <div class="flex-row">
+            <div class="flex-text">
+                <p>As of 2025, Ethiopia has a population of 135 million. It is the 10th-most populous country in the world but faces significant economic challenges. Over 58 million people do not have access to clean water.</p>
+            </div>
+            <img src="map.png" alt="Map" class="side-img">
+        </div>
         <div class="research-question-box">
             "What is the impact of climate variability on economic growth in Ethiopia?"
         </div>
@@ -159,24 +155,27 @@
 
     <div id="ca" class="tab-content">
         <h2>Climate & Agriculture</h2>
-        <img src="picture.png" alt="Climate" class="img-small">
-        <p>96% of cropland is rain-fed, making farmers extremely vulnerable to weather changes.</p>
+        <div class="flex-row">
+            <div class="flex-text">
+                <p>96% of cropland is rain-fed, making farmers extremely vulnerable to weather changes. Agriculture generated 34.5% of the total GDP in 2020.</p>
+            </div>
+            <img src="picture.png" alt="Climate" class="side-img">
+        </div>
     </div>
 
     <div id="ed" class="tab-content">
         <h2>Education</h2>
-        <p>Work and school compete for children's time. Higher rainfall often pulls boys out of school to help with labor.</p>
+        <p>Work and school compete for children's time. Primary enrollment is around 58%, while secondary enrollment drops significantly to 2.5%.</p>
     </div>
 
     <div id="ec" class="tab-content">
         <h2>Economy</h2>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="https://www.imf.org/external/datamapper/profile/ETH" target="_blank" style="color: var(--eth-green); font-weight: bold;">View IMF Economy Profile →</a>
-        </div>
+        <p>Explore the data via the International Monetary Fund.</p>
+        <a href="https://www.imf.org/external/datamapper/profile/ETH" target="_blank" style="color: var(--eth-green); font-weight: bold;">View IMF Economy Profile →</a>
     </div>
 
     <div id="ef" class="tab-content">
-        <h2>Effect & NARDL</h2>
+        <h2>Effect</h2>
         <p>A 1% increase in temperature variability can decrease annual GDP by up to 4.5%.</p>
     </div>
 
@@ -192,10 +191,10 @@
 
     <div id="out" class="tab-content">
         <h2>Outlook</h2>
-        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-            <div class="headshot-frame">
-                <img src="headshot.JPG" alt="Malina Steingart">
-            </div>
+        <div class="headshot-frame">
+            <img src="headshot.JPG" alt="Malina Steingart">
+        </div>
+        <div style="text-align: center;">
             <strong style="color: var(--eth-red);">Malina Steingart</strong>
             <p>Younger generations need education to move beyond conventional farming methods.</p>
         </div>
