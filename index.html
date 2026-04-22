@@ -15,138 +15,112 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            line-height: 1.8; /* Adjusted for better readability */
+            line-height: 1.6;
             margin: 0;
             background-color: #f8fafc;
             color: #333;
-            display: flex; flex-direction: column; min-height: 100vh;
         }
 
+        /* HEADER & FLAG */
         header {
             background-color: var(--deep-blue);
             color: white;
+            padding: 40px 20px;
+            border-bottom: 8px solid var(--eth-green);
             text-align: center;
-            padding: 60px 20px;
-            border-bottom: 10px solid var(--eth-green);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
         }
 
         .header-top {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 35px;
-            max-width: 1200px;
-            flex-wrap: wrap; /* Helps on mobile */
-            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .flag-img { 
-            max-width: 150px; 
+            width: 120px; /* Smaller Flag */
             height: auto;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4));
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
         }
 
         .short-question {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            letter-spacing: 1px;
-            line-height: 1.3;
+            font-size: 1.8rem;
+            line-height: 1.2;
             font-weight: 700;
         }
 
+        /* NAVIGATION */
         .banner {
             background-color: #162a44;
             position: sticky; top: 0; z-index: 1000;
             display: flex; justify-content: center; flex-wrap: wrap;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-            padding: 8px 0;
+            padding: 5px 0;
         }
 
         .banner button {
             background: none; border: none; color: white;
-            padding: 15px 25px; font-weight: 700; font-size: 0.9rem;
+            padding: 15px 20px; font-weight: 700; font-size: 0.85rem;
             text-transform: uppercase; cursor: pointer; transition: 0.3s;
-            border-bottom: 5px solid transparent;
         }
 
-        .banner button:hover { color: var(--eth-yellow); }
-        .banner button.active { color: var(--eth-yellow); border-bottom: 5px solid var(--eth-yellow); }
+        .banner button.active { color: var(--eth-yellow); border-bottom: 3px solid var(--eth-yellow); }
 
-        .container { max-width: 1150px; margin: 60px auto; padding: 0 40px; flex: 1; }
+        /* CONTENT CONTAINERS */
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
 
         .tab-content {
-            display: none; background: white; padding: 60px; 
-            border-radius: 40px; box-shadow: 0 25px 60px rgba(0,0,0,0.08);
-            animation: fadeIn 0.5s ease-out;
+            display: none; background: white; padding: 40px; 
+            border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         .tab-content.active { display: block; }
-        
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; } }
 
-        h2 { color: var(--deep-blue); border-left: 10px solid var(--eth-red); padding-left: 25px; margin-bottom: 50px; font-size: 2.2rem;}
+        h2 { color: var(--deep-blue); border-left: 6px solid var(--eth-red); padding-left: 15px; }
 
-        .research-question-box {
-            font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--deep-blue);
-            text-align: center; padding: 50px; margin: 50px 0; background: #fffdf5;
-            border-radius: 25px; border: 6px solid var(--eth-yellow); line-height: 1.7; font-weight: bold;
+        /* IMAGE SIZING RULES */
+        .img-small { 
+            display: block; 
+            max-width: 300px; /* Smaller Map and Picture */
+            margin: 20px auto; 
+            border-radius: 15px; 
         }
 
-        .quote-box {
-            font-style: italic; background: #f1f5f9; padding: 45px;
-            border-radius: 20px; border-right: 10px solid var(--eth-red);
-            margin: 50px 0; font-size: 1.3rem; line-height: 1.9;
+        .summary-img {
+            display: block;
+            max-width: 500px; /* Smaller Summary Graph */
+            width: 100%;
+            margin: 30px auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
         }
 
-        .summary-frame {
-            padding: 25px; border: 1px solid #eee; background: #fff;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.12); border-radius: 15px;
-            margin: 60px auto; text-align: center; max-width: 90%;
-        }
-        .summary-frame img { width: 100%; height: auto; border-radius: 8px; }
-
-        .climate-img-small {
-            max-width: 100%; width: 380px; display: block;
-            margin: 50px auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .conclusion-wrapper {
-            background: #f0fdf4; padding: 60px; border-radius: 35px;
-            border: 2px solid var(--eth-green); margin-bottom: 60px;
-        }
-
-        .headshot-area { display: flex; gap: 40px; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
-
+        /* HEADSHOT */
         .headshot-frame {
-            flex: 0 0 180px; width: 180px; height: 180px; border-radius: 50%;
-            overflow: hidden; border: 8px solid white; box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            width: 120px; /* Smaller Portrait */
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
         }
         .headshot-frame img { width: 100%; height: 100%; object-fit: cover; }
 
-        .news-card {
-            background: #fefce8; border: 2px dashed var(--eth-yellow);
-            padding: 40px; border-radius: 20px; margin-bottom: 60px; text-align: center;
+        .research-question-box {
+            font-family: 'Playfair Display', serif; font-size: 1.4rem; 
+            text-align: center; padding: 30px; margin: 30px 0; 
+            background: #fffdf5; border: 4px solid var(--eth-yellow); border-radius: 15px;
         }
 
         .donation-card {
             background: linear-gradient(135deg, var(--eth-green), var(--deep-blue));
-            color: white; padding: 60px; border-radius: 25px; text-align: center;
-            cursor: pointer; transition: transform 0.3s ease; border: none; width: 100%;
-            display: block; text-decoration: none; margin-top: 60px; box-sizing: border-box;
-        }
-        .donation-card:hover { transform: scale(1.02); }
-        .btn-donate-now {
-            background: var(--eth-yellow); color: #000; padding: 22px 50px;
-            border-radius: 70px; font-weight: bold; display: inline-block; margin-top: 40px;
-            text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem;
+            color: white; padding: 40px; border-radius: 20px; text-align: center;
+            text-decoration: none; display: block; margin-top: 40px;
         }
 
-        footer { text-align: center; padding: 80px; background: #eeeff1; color: #64748b; font-size: 1.1rem; }
-        
-        /* General img fix */
-        img { max-width: 100%; height: auto; }
+        footer { text-align: center; padding: 40px; color: #64748b; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -165,7 +139,7 @@
     <button class="tab-link" onclick="openTab(event, 'ca')">Climate & Agriculture</button>
     <button class="tab-link" onclick="openTab(event, 'ed')">Education</button>
     <button class="tab-link" onclick="openTab(event, 'ec')">Economy</button>
-    <button class="tab-link" onclick="openTab(event, 'ef')">Effect & NARDL</button>
+    <button class="tab-link" onclick="openTab(event, 'ef')">Effect</button>
     <button class="tab-link" onclick="openTab(event, 'sm')">Summary</button>
     <button class="tab-link" onclick="openTab(event, 'ini')">Initiative</button>
     <button class="tab-link" onclick="openTab(event, 'out')">Outlook</button>
@@ -175,101 +149,58 @@
 
     <div id="ov" class="tab-content active">
         <h2>Overview</h2>
-        <div style="display: flex; gap: 60px; flex-wrap: wrap; margin-bottom: 50px;">
-            <div style="flex: 1; min-width: 300px;">
-                <p>The Federal Democratic Republic of Ethiopia is a landlocked country located in East Africa. As of 2025, it has a population of around 135 million. Ethiopia is not only the <b>10th-most populous</b> country in the world but is also known for having one of the <b>lowest GDPs per capita globally</b>. Contributing to this are numerous contagious diseases that are worsened by poor sanitation and malnutrition. Over 58 million people, nearly half the population, do not have access to clean water as of 2023.</p>
-            </div>
-            <div style="flex: 0 0 400px; max-width: 100%;">
-                <img src="map.png" alt="Ethiopia Map" style="border-radius: 25px;">
-            </div>
-        </div>
-        
-        <p>This development status makes the country more <b>vulnerable to climate variability</b> and change. Ethiopia has multiple climate zones that vary from hot and arid to cold and humid. However, the main environmental problems include droughts, floods, and water and air pollution, which lead to poor crop yields, land degradation, soil erosion, loss of biodiversity, and livestock depletion.</p>
-
+        <p>As of 2025, Ethiopia has a population of 135 million. It is the 10th-most populous country in the world but faces significant economic challenges.</p>
+        <img src="map.png" alt="Map" class="img-small">
         <div class="research-question-box">
-            "What is the impact of climate variability on economic growth in Ethiopia, and how does it contribute to persistent poverty in an agriculture-dependent economy?"
+            "What is the impact of climate variability on economic growth in Ethiopia?"
         </div>
-
-        <div class="summary-frame">
-            <img src="summary.jpg" alt="Research Summary Image">
-        </div>
+        <img src="summary.jpg" alt="Summary Graph" class="summary-img">
     </div>
 
     <div id="ca" class="tab-content">
         <h2>Climate & Agriculture</h2>
-        <img src="picture.png" alt="Climate Impact" class="climate-img-small">
-        <p>Crops grown during the summer season are harvested between September and December and account for <b>90–95% of total annual production</b>. The timing and amount of rainfall during the growing season are therefore critical for crop production, as <b>96% of cropland is rain-fed</b>. This means that farmers rely heavily on the weather.</p>
-        
-        <p>Agriculture is an essential driver of economic growth in the Ethiopian economy. In 2020, agriculture generated <b>34.5% of the total GDP</b>. Beyond products, agricultural labor makes up around <b>85% of the total labor force</b>. Experts predict warming temperatures in all four seasons, with an annual increase of 2.2°C by the 2050s.</p>
+        <img src="picture.png" alt="Climate" class="img-small">
+        <p>96% of cropland is rain-fed, making farmers extremely vulnerable to weather changes.</p>
     </div>
 
     <div id="ed" class="tab-content">
         <h2>Education</h2>
-        <p>Work and school often compete for children’s time. In a recent survey, higher rainfall was negatively correlated with enrollment, especially for boys, who are often pulled out of school to assist with farm labor during productive periods.</p>
-        <ul style="margin-top: 30px;">
-            <li>Primary school enrollment: <b>57%</b> for boys, <b>59%</b> for girls.</li>
-            <li>Secondary school enrollment (ages 15-18): approximately <b>2.5%</b>.</li>
-            <li><b>71%</b> of rural children aged 10–14 are employed.</li>
-        </ul>
+        <p>Work and school compete for children's time. Higher rainfall often pulls boys out of school to help with labor.</p>
     </div>
 
     <div id="ec" class="tab-content">
-        <h2>Economy</h2>    
-        <div style="text-align: center; margin: 50px 0;">
-            <a href="https://www.imf.org/external/datamapper/profile/ETH" target="_blank" style="display: inline-block; padding: 25px 55px; background: var(--eth-green); color: white; text-decoration: none; border-radius: 15px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-                🔗 VIEW IMF ECONOMY PROFILE
-            </a>
+        <h2>Economy</h2>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="https://www.imf.org/external/datamapper/profile/ETH" target="_blank" style="color: var(--eth-green); font-weight: bold;">View IMF Economy Profile →</a>
         </div>
     </div>
 
     <div id="ef" class="tab-content">
         <h2>Effect & NARDL</h2>
-        <p>Climate change creates "poverty traps." An experiment showed that a <b>1%</b> increase in temperature variability can decrease Ethiopian annual GDP by up to <b>4.5%</b>.</p>
-        <p>The NARDL model shows that Ethiopia's economy responds more drastically to "bad" weather shocks than to "good" ones, meaning damage from a drought takes much longer to recover from than a good season helps.</p>
+        <p>A 1% increase in temperature variability can decrease annual GDP by up to 4.5%.</p>
     </div>
 
     <div id="sm" class="tab-content">
         <h2>Summary</h2>
-        <p>Heavy reliance on rain-fed agriculture intensities vulnerabilities. Over a 50-year period, climate change may lead to <b>20%</b> to <b>30%</b> less average income for the nation.</p>
-        <ul>
-            <li><b>Macro Strategy:</b> Adaptation must be part of core economic planning.</li>
-            <li><b>Poverty Cycle:</b> Shocks prevent family asset accumulation.</li>
-        </ul>
+        <p>Climate adaptation must be a core part of macroeconomic planning to break the poverty cycle.</p>
     </div>
 
     <div id="ini" class="tab-content">
         <h2>Initiative</h2>
-        <div class="news-card">
-            <h3>International Finance News</h3>
-            <p style="font-weight: bold; font-size: 1.4rem; color: #1e293b; margin-bottom: 30px;">Ethiopian agricultural businesses to get €40 million in financing under EIB Global accord.</p>
-            <div class="quote-box" style="margin: 0; background: white; border-right: none; border-left: 8px solid var(--eth-yellow); text-align: left; font-size: 1.1rem;">
-                "Agriculture is a key driver of Ethiopia's economic growth... we act as a catalyst for the mobilization of private capital." <br><strong>— Ambroise Fayolle, EIB Vice President</strong>
-            </div>
-        </div>
-        <hr style="margin: 60px 0; border: none; border-top: 2px solid #eee;">
-        <div style="text-align: center;">
-            <a href="https://www.youtube.com/watch?v=gByD293uFsY" target="_blank" style="text-decoration: none;">
-                <img src="https://img.youtube.com/vi/gByD293uFsY/maxresdefault.jpg" style="width: 100%; max-width: 750px; border-radius: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.2);">
-                <p style="color: var(--eth-red); font-weight: 700; margin-top: 30px; font-size: 1.2rem;">▶ WATCH SUPPORTING MEDIA: SOS ETHIOPIA</p>
-            </a>
-        </div>
+        <p>Financing through EIB Global and SOS Children's Villages are helping modernize farming.</p>
     </div>
 
     <div id="out" class="tab-content">
         <h2>Outlook</h2>
-        <div class="conclusion-wrapper">
-            <div class="headshot-area">
-                <div class="headshot-frame">
-                    <img src="headshot.JPG" alt="Malina Steingart Headshot">
-                </div>
-                <div style="color: var(--eth-red); font-weight: bold; font-size: 1.6rem;">Malina Steingart</div>
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <div class="headshot-frame">
+                <img src="headshot.JPG" alt="Malina Steingart">
             </div>
-            <p>Younger generations need to be educated. Subsidizing lost labor through additional income or tax reductions could help raise a generation of farmers who know how to adapt using methods like solar-powered irrigation pumps.</p>
+            <strong style="color: var(--eth-red);">Malina Steingart</strong>
+            <p>Younger generations need education to move beyond conventional farming methods.</p>
         </div>
-
         <a href="https://www.sos-usa.org/take-action/ways-to-give/forms/donation-form" target="_blank" class="donation-card">
-            <h3>Support SOS Children's Villages</h3>
-            <span class="btn-donate-now">DONATE TO SOS USA</span>
+            Support SOS Children's Villages
         </a>
     </div>
 
@@ -288,7 +219,6 @@
         for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
         document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " active";
-        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 </script>
 
