@@ -91,22 +91,15 @@
         }
 
         .quote-box {
-            font-style: italic; background: #f1f5f9; padding: 45px;
-            border-radius: 20px; border-right: 10px solid var(--eth-red);
-            margin: 50px 0; font-size: 1.3rem; line-height: 1.9;
+            font-style: italic;
+            background: #f1f5f9;
+            padding: 45px;
+            border-radius: 20px;
+            border-right: 10px solid var(--eth-red);
+            margin: 50px 0;
+            font-size: 1.3rem;
+            line-height: 1.9;
         }
-
-        /* Side-by-side layout for images */
-        .content-flex {
-            display: flex;
-            gap: 60px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-            align-items: flex-start;
-        }
-        .content-text { flex: 1; min-width: 350px; }
-        .content-img-frame { flex: 0 0 400px; max-width: 100%; }
-        .content-img-frame img { width: 100%; border-radius: 25px; }
 
         .summary-frame {
             padding: 25px; border: 1px solid #eee; background: #fff;
@@ -115,11 +108,22 @@
         }
         .summary-frame img { width: 100%; border-radius: 8px; }
 
-        .conclusion-wrapper {
-            background: #f0fdf4; padding: 60px; border-radius: 35px; border: 2px solid var(--eth-green); margin-bottom: 60px;
+        .climate-img-small {
+            max-width: 380px;
+            display: block;
+            margin: 50px auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .headshot-area { display: flex; gap: 40px; align-items: center; margin-bottom: 40px; }
+        .conclusion-wrapper {
+            background: #f0fdf4;
+            padding: 60px; border-radius: 35px; border: 2px solid var(--eth-green); margin-bottom: 60px;
+        }
+
+        .headshot-area {
+            display: flex; gap: 40px; align-items: center; margin-bottom: 40px;
+        }
 
         .headshot-frame {
             flex: 0 0 180px; width: 180px; height: 180px; border-radius: 50%;
@@ -127,11 +131,22 @@
         }
         .headshot-frame img { width: 100%; height: 100%; object-fit: cover; }
 
+        .news-card {
+            background: #fefce8; border: 2px dashed var(--eth-yellow);
+            padding: 40px; border-radius: 20px; margin-bottom: 60px; text-align: center;
+        }
+
         .donation-card {
             background: linear-gradient(135deg, var(--eth-green), var(--deep-blue));
             color: white; padding: 60px; border-radius: 25px; text-align: center;
             cursor: pointer; transition: transform 0.3s ease; border: none; width: 100%;
             display: block; text-decoration: none; margin-top: 60px;
+        }
+        .donation-card:hover { transform: scale(1.02); }
+        .btn-donate-now {
+            background: var(--eth-yellow); color: #000; padding: 22px 50px;
+            border-radius: 70px; font-weight: bold; display: inline-block; margin-top: 40px;
+            text-transform: uppercase; letter-spacing: 2px; font-size: 1.1rem;
         }
 
         footer { text-align: center; padding: 80px; background: #eeeff1; color: #64748b; font-size: 1.1rem; }
@@ -163,12 +178,12 @@
 
     <div id="ov" class="tab-content active">
         <h2>Overview</h2>
-        <div class="content-flex">
-            <div class="content-text">
+        <div style="display: flex; gap: 60px; flex-wrap: wrap; margin-bottom: 50px;">
+            <div style="flex: 1; min-width: 350px;">
                 <p>The Federal Democratic Republic of Ethiopia is a landlocked country located in East Africa. As of 2025, it has a population of around 135 million. Ethiopia is not only the <b>10th-most populous</b> country in the world according to the UN but is also known for having one of the <b>lowest GDPs per capita globally</b>. Contributing to this are numerous contagious diseases that are worsened by poor sanitation and malnutrition. Over 58 million people, nearly half the population, do not have access to clean water as of 2023.</p>
             </div>
-            <div class="content-img-frame">
-                <img src="map.png" alt="Ethiopia Map">
+            <div style="flex: 0 0 400px;">
+                <img src="map.png" alt="Ethiopia Map" style="width: 100%; border-radius: 25px;">
             </div>
         </div>
         
@@ -192,14 +207,8 @@
 
     <div id="ca" class="tab-content">
         <h2>Climate & Agriculture</h2>
-        <div class="content-flex">
-            <div class="content-text">
-                <p>Crops grown during the summer season are harvested between September and December and account for <b>90–95% of total annual production</b>. The timing and amount of rainfall during the growing season are therefore critical for crop production, as <b>96% of cropland is rain-fed</b>. This means that farmers rely heavily on the weather; with the climate becoming increasingly fluctuating and extreme, a bad crop equals an almost entire loss of production.</p>
-            </div>
-            <div class="content-img-frame">
-                <img src="picture.png" alt="Climate Impact">
-            </div>
-        </div>
+        <img src="picture.png" alt="Climate Impact" class="climate-img-small">
+        <p>Crops grown during the summer season are harvested between September and December and account for <b>90–95% of total annual production</b>. The timing and amount of rainfall during the growing season are therefore critical for crop production, as <b>96% of cropland is rain-fed</b>. This means that farmers rely heavily on the weather; with the climate becoming increasingly fluctuating and extreme, a bad crop equals an almost entire loss of production.</p>
         
         <p>Agriculture is an essential driver of economic growth in the Ethiopian economy. Crop and livestock production account for roughly <b>65% and 25% of agricultural GDP</b>, respectively. In 2020, agriculture generated <b>34.5% of the total GDP</b>. Beyond products, agricultural labor makes up around <b>85% of the total labor force</b>. Therefore, the agricultural sector contributes to the overall monetary value of the economy by creating employment opportunities, generating exports, and feeding the nation.</p>
         
@@ -219,13 +228,13 @@
     </div>
 
     <div id="ec" class="tab-content">
-        <h2>Economy</h2>    
-        <div style="text-align: center; margin: 50px 0;">
-            <a href="https://www.imf.org/external/datamapper/profile/ETH" target="_blank" style="display: inline-block; padding: 25px 55px; background: var(--eth-green); color: white; text-decoration: none; border-radius: 15px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-                🔗 VIEW IMF ECONOMY PROFILE
-            </a>
-        </div>
+    <h2>Economy</h2>    
+    <div style="text-align: center; margin: 50px 0;">
+        <a href="https://www.imf.org/external/datamapper/profile/ETH" target="_blank" style="display: inline-block; padding: 25px 55px; background: var(--eth-green); color: white; text-decoration: none; border-radius: 15px; font-weight: 700; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+            🔗 VIEW IMF ECONOMY PROFILE
+        </a>
     </div>
+</div>
 
     <div id="ef" class="tab-content">
         <h2>Effect & NARDL</h2>
@@ -248,11 +257,13 @@
 
     <div id="ini" class="tab-content">
         <h2>Initiative</h2>
-        <h3 style="margin-bottom: 20px;">International Finance News</h3>
-        <p style="font-weight: bold; font-size: 1.4rem; color: #1e293b; margin-bottom: 30px;">Ethiopian agricultural businesses to get €40 million in financing under EIB Global accord with Zemen Bank.</p>
-        
-        <div class="quote-box" style="margin: 0; background: white; border-right: none; border-left: 8px solid var(--eth-yellow); text-align: left; font-size: 1.1rem;">
-            "Agriculture is a key driver of Ethiopia's economic growth, contributing to GDP, export earnings, and employment... By extending credit lines to local commercial banks, with a focus on climate action and environmental sustainability, we act as a catalyst for the mobilization of private capital for the whole agricultural value chain." <br><strong>— Ambroise Fayolle, EIB Vice President</strong>
+        <div class="news-card">
+            <h3 style="margin-bottom: 20px;">International Finance News</h3>
+            <p style="font-weight: bold; font-size: 1.4rem; color: #1e293b; margin-bottom: 30px;">Ethiopian agricultural businesses to get €40 million in financing under EIB Global accord with Zemen Bank.</p>
+            
+            <div class="quote-box" style="margin: 0; background: white; border-right: none; border-left: 8px solid var(--eth-yellow); text-align: left; font-size: 1.1rem;">
+                "Agriculture is a key driver of Ethiopia's economic growth, contributing to GDP, export earnings, and employment... By extending credit lines to local commercial banks, with a focus on climate action and environmental sustainability, we act as a catalyst for the mobilization of private capital for the whole agricultural value chain." <br><strong>— Ambroise Fayolle, EIB Vice President</strong>
+            </div>
         </div>
 
         <hr style="margin: 60px 0; border: none; border-top: 2px solid #eee;">
@@ -276,16 +287,18 @@
         <div class="conclusion-wrapper">
             <div class="headshot-area">
                 <div class="headshot-frame">
-                    <img src="headshot.JPG" alt="Malina Steingart Headshot">
+                    <img src="headshot.JPG" alt="Researcher">
                 </div>
                 <div style="color: var(--eth-red); font-weight: bold; font-size: 1.6rem;">Malina Steingart</div>
             </div>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">
-                This is precisely how the international community can help. Younger generations need to be educated, as the agricultural methods of previous generations are no longer sufficient. Conventional farming methods are not sustainable, and with intensifying climate change, they are too unreliable. Incentivizing education by subsidizing lost labor through additional income or tax reductions could help raise a generation of farmers who know how to adapt.
-            </p>
-            <p style="font-size: 1.2rem;">
-                The climate initiative I researched is run by SOS Children's Villages Ethiopia and focuses on increasing knowledge and education in villages. With this knowledge, the next generation of the workforce can revolutionize their production facilities. One idea, for instance, is to become less reliant on rain while generating revenue during dry seasons through solar-powered irrigation pumps. These pumps can draw water from ponds or lakes during the rainy season and save it for when it is needed, thereby developing irrigation capacity.
-            </p>
+            <div style="flex: 1;">
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">
+                    This is precisely how the international community can help. Younger generations need to be educated, as the agricultural methods of previous generations are no longer sufficient. Conventional farming methods are not sustainable, and with intensifying climate change, they are too unreliable. Incentivizing education by subsidizing lost labor through additional income or tax reductions could help raise a generation of farmers who know how to adapt.
+                </p>
+                <p style="font-size: 1.2rem;">
+                    The climate initiative I researched is run by SOS Children's Villages Ethiopia and focuses on increasing knowledge and education in villages. With this knowledge, the next generation of the workforce can revolutionize their production facilities. One idea, for instance, is to become less reliant on rain while generating revenue during dry seasons through solar-powered irrigation pumps. These pumps can draw water from ponds or lakes during the rainy season and save it for when it is needed, thereby developing irrigation capacity.
+                </p>
+            </div>
         </div>
 
         <a href="https://www.sos-usa.org/take-action/ways-to-give/forms/donation-form" target="_blank" class="donation-card">
