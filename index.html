@@ -69,11 +69,11 @@
             display: none; background: white; padding: 50px; 
             border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.06);
         }
-        .tab-content.active { display: block; }
+        /* This ensures the first tab is ALWAYS visible on load */
+        .tab-content.active { display: block !important; }
 
         h2 { color: var(--deep-blue); border-left: 8px solid var(--eth-red); padding-left: 20px; margin-bottom: 30px; }
 
-        /* Side-by-Side Layout Fix */
         .flex-row {
             display: flex;
             gap: 40px;
@@ -150,12 +150,12 @@
 
 <div class="container">
 
-    <div id="ov" class="tab-content active">
+    <div id="ov" class="tab-content active" style="display: block;">
         <h2>Overview</h2>
         <div class="flex-row">
             <div class="flex-text">
                 <p>The Federal Democratic Republic of Ethiopia is a landlocked country located in East Africa. As of 2025, it has a population of around 135 million. Ethiopia is not only the <b>10th-most populous</b> country in the world but is also known for having one of the <b>lowest GDPs per capita globally</b>. Contributing to this are numerous contagious diseases that are worsened by poor sanitation and malnutrition. Over 58 million people, nearly half the population, do not have access to clean water as of 2023.</p>
-                <p>This development status makes the country more <b>vulnerable to climate variability</b> and change. The main environmental problems include droughts, floods, and water and air pollution, which lead to poor crop yields, land degradation, soil erosion, and loss of biodiversity.</p>
+                <p>This development status makes the country more <b>vulnerable to climate variability</b> and change. In recent years, the environment has become a key issue in Ethiopia because it affects the country as a whole. Ethiopia has multiple climate zones that vary from hot and arid to cold and humid. However, the main environmental problems include droughts, floods, and water and air pollution, which lead to poor crop yields, land degradation, soil erosion, loss of biodiversity, and livestock depletion.</p>
             </div>
             <img src="map.png" alt="Ethiopia Map" class="side-img">
         </div>
@@ -170,7 +170,8 @@
         <div class="flex-row">
             <div class="flex-text">
                 <p>Crops grown during the summer season are harvested between September and December and account for <b>90–95% of total annual production</b>. The timing and amount of rainfall during the growing season are therefore critical for crop production, as <b>96% of cropland is rain-fed</b>. This means that farmers rely heavily on the weather; with the climate becoming increasingly fluctuating and extreme, a bad crop equals an almost entire loss of production.</p>
-                <p>Agriculture is an essential driver of economic growth. In 2020, agriculture generated <b>34.5% of the total GDP</b>. Beyond products, agricultural labor makes up around <b>85% of the total labor force</b>.</p>
+                <p>Agriculture is an essential driver of economic growth in the Ethiopian economy. Crop and livestock production account for roughly <b>65% and 25% of agricultural GDP</b>, respectively. In 2020, agriculture generated <b>34.5% of the total GDP</b>. Beyond products, agricultural labor makes up around <b>85% of the total labor force</b>.</p>
+                <p>Experts predict warming temperatures in all four seasons, with an annual increase of 2.2°C by the 2050s, which will lead to significant reductions in agricultural production.</p>
             </div>
             <img src="picture.png" alt="Climate Impact" class="side-img">
         </div>
@@ -178,17 +179,18 @@
 
     <div id="ed" class="tab-content">
         <h2>Education</h2>
-        <p>Work and school often compete for children’s time. In a recent survey, higher rainfall was negatively correlated with enrollment. This especially affected males, as boys were often pulled out of school to assist with farm labor during productive periods.</p>
+        <p>Work and school often compete for children’s time. In a recent survey, experts found that higher rainfall during the year was negatively correlated with enrollment and grade attainment in school. This especially affected males, as boys were often pulled out of school to assist with farm labor during productive periods or to seek work after crop failures.</p>
+        <h3 style="margin-top: 30px;">Findings by the Ethiopia Rural Socioeconomic Survey:</h3>
         <ul>
-            <li>Primary school enrollment: <b>57%</b> for boys, <b>59%</b> for girls.</li>
-            <li>Secondary school enrollment: approximately <b>2.5%</b>.</li>
-            <li><b>71%</b> of rural children aged 10–14 are employed.</li>
+            <li>Among rural children, primary school enrollment was <b>57%</b> for boys and <b>59%</b> for girls.</li>
+            <li>Secondary school enrollment (ages 15-18) was approximately <b>2.5%</b> for both boys and girls.</li>
+            <li><b>71%</b> of rural children aged 10–14 are employed, and the mean number of hours worked per week is 28.</li>
         </ul>
     </div>
 
     <div id="ec" class="tab-content">
         <h2>Economy</h2>
-        <p>Agriculture contributes significantly to GDP, export earnings, and employment. However, high sensitivity to rainfall fluctuations directly correlates with GDP volatility.</p>
+        <p>Agriculture is an essential driver of economic growth in the Ethiopian economy. High sensitivity to rainfall fluctuations directly correlates with <b>GDP</b> volatility. Agriculture contributes significantly to the overall monetary value of the economy by creating employment opportunities, generating exports, and feeding the nation.</p>
         <div style="text-align: center; margin-top: 30px;">
             <a href="https://www.imf.org/external/datamapper/profile/ETH" target="_blank" style="display: inline-block; padding: 20px 40px; background: var(--eth-green); color: white; text-decoration: none; border-radius: 10px; font-weight: bold;">🔗 VIEW IMF ECONOMY PROFILE</a>
         </div>
@@ -196,43 +198,50 @@
 
     <div id="ef" class="tab-content">
         <h2>Effect & NARDL</h2>
-        <p>Climate shocks create "poverty traps" for rural households. A <b>1%</b> increase in annual temperature variability is found to decrease the Ethiopian annual GDP by up to <b>4.5%</b>.</p>
-        <p>The NARDL model shows that Ethiopia's economy does not respond to "good" and "bad" weather equally; negative shocks (droughts) have a more lasting and damaging effect than positive shocks of "good" seasons.</p>
+        <p>The effects of climate change, such as major national droughts, create "poverty traps" for rural households, making it nearly impossible to build up assets or escape poverty once a shock occurs. An experiment showed that a <b>1%</b> increase in annual temperature variability is found to decrease the Ethiopian annual gross domestic product (<b>GDP</b>) by up to <b>4.5%</b>.</p>
+        <p>The Nonlinear Autoregressive Distributed Lag (NARDL) model recognizes that economic systems often respond differently to positive and negative shocks. Ethiopia's economy does not respond to "good" weather and "bad" weather in equal measure; the negative shocks from climate variability (like droughts) have a more lasting and damaging effect than the positive shocks of "good" seasons.</p>
     </div>
 
     <div id="sm" class="tab-content">
         <h2>Summary</h2>
-        <p>Climate-induced reductions in crop output have led to an estimated <b>5%-10%</b> decline in annual agricultural GDP. Over a 50-year period, projected reductions in productivity may lead to <b>20% to 30%</b> less average income compared to a scenario without climate change.</p>
+        <p>In Ethiopia, climate-induced reductions in crop output have led to an estimated <b>5%-10%</b> decline in annual agricultural <b>GDP</b>. Over a 50-year period, the projected reduction in agricultural productivity due to climate change may lead to <b>20%</b> to <b>30%</b> less average income compared to a scenario without climate change.</p>
+        <ul style="margin-top: 30px;">
+            <li><b>Macro Strategy:</b> Climate adaptation should be a core part of macroeconomic planning.</li>
+            <li><b>Poverty Cycle:</b> Climate shocks create "poverty traps," preventing asset accumulation.</li>
+        </ul>
     </div>
 
     <div id="ini" class="tab-content">
         <h2>Initiative</h2>
-        <p>The EIB Global accord with Zemen Bank is providing €40 million in financing to agricultural businesses with a focus on climate action.</p>
+        <p>Ethiopian agricultural businesses are set to get €40 million in financing under EIB Global accord with Zemen Bank. This focuses on climate action and environmental sustainability.</p>
         <div class="quote-box">
-            "Agriculture is a key driver of Ethiopia's economic growth... we act as a catalyst for the mobilization of private capital." — Ambroise Fayolle, EIB Vice President
+            "Agriculture is a key driver of Ethiopia's economic growth... By extending credit lines to local commercial banks, we act as a catalyst for the mobilization of private capital." — Ambroise Fayolle, EIB Vice President
         </div>
         <div style="text-align: center; margin-top: 30px;">
             <a href="https://www.youtube.com/watch?v=gByD293uFsY" target="_blank">
                 <img src="https://img.youtube.com/vi/gByD293uFsY/maxresdefault.jpg" style="width: 100%; max-width: 600px; border-radius: 20px;">
-                <p style="color: var(--eth-red); font-weight: bold;">▶ WATCH: SOS ETHIOPIA SUPPORT MEDIA</p>
+                <p style="color: var(--eth-red); font-weight: bold;">▶ WATCH SUPPORTING MEDIA: SOS ETHIOPIA</p>
             </a>
         </div>
     </div>
 
     <div id="out" class="tab-content">
         <h2>Outlook</h2>
-        <div style="background: #f0fdf4; padding: 40px; border-radius: 25px; border: 2px solid var(--eth-green);">
+        <div class="quote-box" style="border-right: none; border-left: 10px solid var(--eth-green); background: #f0fdf4;">
+            "I see how much the farmers suffer," says local school principal, Kedir Abdo Ketebo. "The depleted soil brings less and less income, and the families are becoming increasingly impoverished."
+        </div>
+        <div style="background: white; padding: 40px; border-radius: 25px; border: 2px solid var(--eth-green); margin-top: 30px;">
             <div class="headshot-frame">
                 <img src="headshot.JPG" alt="Malina Steingart">
             </div>
             <div style="text-align: center; margin-bottom: 20px;">
                 <strong style="color: var(--eth-red); font-size: 1.4rem;">Malina Steingart</strong>
             </div>
-            <p>Younger generations need to be educated. Conventional farming methods are no longer sufficient. One idea is to become less reliant on rain through solar-powered irrigation pumps that draw water from ponds and lakes during the rainy season and save it for when it is needed.</p>
+            <p>Younger generations need to be educated, as the agricultural methods of previous generations are no longer sufficient. One idea is to become less reliant on rain while generating revenue during dry seasons through solar-powered irrigation pumps. The climate initiative I researched is run by SOS Children's Villages Ethiopia and focuses on increasing knowledge and education in villages.</p>
         </div>
         <a href="https://www.sos-usa.org/take-action/ways-to-give/forms/donation-form" target="_blank" class="donation-card">
             <h3>Support SOS Children's Villages</h3>
-            <p>Help empower the next generation of Ethiopian farmers.</p>
+            <p>Help empower the next generation of Ethiopian farmers through education and infrastructure.</p>
         </a>
     </div>
 
@@ -246,10 +255,17 @@
     function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tab-content");
-        for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
         tablinks = document.getElementsByClassName("tab-link");
-        for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
-        document.getElementById(tabName).style.display = "block";
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        var activeTab = document.getElementById(tabName);
+        activeTab.style.display = "block";
+        activeTab.classList.add("active");
         evt.currentTarget.className += " active";
         window.scrollTo({top: 0, behavior: 'smooth'});
     }
